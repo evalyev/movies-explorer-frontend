@@ -1,0 +1,7 @@
+.about__period {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  width: 200px;
+  padding: 9px calc(50% - 100px);
+}

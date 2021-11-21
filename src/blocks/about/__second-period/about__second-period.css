@@ -1,0 +1,7 @@
+.about__second-period {
+  width: calc(100% / 5 * 4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

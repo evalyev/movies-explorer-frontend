@@ -1,0 +1,9 @@
+.header__land-logo {
+  width: 722px;
+  height: 244px;
+  background-image: url(../../../images/header__back.svg);
+  background-size: 722px;
+  position: absolute;
+  bottom: 60px;
+  right: 70px;
+}

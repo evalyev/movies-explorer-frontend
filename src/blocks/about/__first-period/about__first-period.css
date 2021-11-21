@@ -1,0 +1,7 @@
+.about__first-period {
+  width: calc(100% / 5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
