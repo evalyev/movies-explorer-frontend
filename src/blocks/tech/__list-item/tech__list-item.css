@@ -1,0 +1,16 @@
+.tech__list-item {
+  width: 90px;
+  padding: 21px 0 22px;
+  background-color: #E8E8E8;
+  border-radius: 10px;
+  margin-right: 10px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.04em;
+}
+
+.tech__list-item:last-of-type {
+  margin-right: 0;
+}
