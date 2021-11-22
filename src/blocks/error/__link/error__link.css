@@ -1,0 +1,11 @@
+.error__link {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FF6838;
+  text-decoration: none;
+}
