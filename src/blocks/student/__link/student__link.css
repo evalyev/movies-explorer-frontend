@@ -13,3 +13,9 @@
   background-repeat: no-repeat;
   background-position: center right;
 }
+
+@media (max-width: 768px) {
+  .student__link {
+    font-size: 28px;
+  }
+}

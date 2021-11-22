@@ -14,3 +14,18 @@
 .tech__list-item:last-of-type {
   margin-right: 0;
 }
+
+@media (max-width: 850px) {
+  .tech__list-item {
+    width: 76px;
+    padding: 21px 0 21px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech__list-item {
+    font-size: 14px;
+    width: 84px;
+  }
+}

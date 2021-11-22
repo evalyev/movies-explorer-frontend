@@ -1,9 +1,13 @@
 .header__land-logo {
   width: 722px;
-  height: 244px;
-  background-image: url(../../../images/header__back.svg);
-  background-size: 722px;
-  position: absolute;
-  bottom: 60px;
-  right: 70px;
+  object-fit: cover;
+  margin-top: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 910px) {
+  .header__land-logo {
+    width: calc(100% - 14px * 2);
+    margin: auto auto 0;
+  }
 }

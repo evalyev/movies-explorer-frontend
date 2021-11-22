@@ -5,3 +5,11 @@
   font-size: 18px;
   line-height: 20px;
 }
+
+@media (max-width: 768px) {
+  .student__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 16px;
+  }
+}

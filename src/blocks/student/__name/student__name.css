@@ -6,3 +6,10 @@
   line-height: 58px;
   letter-spacing: -0.04em;
 }
+
+@media (max-width: 768px) {
+  .student__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}

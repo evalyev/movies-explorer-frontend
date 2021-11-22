@@ -2,6 +2,11 @@
   margin: 100px auto 0;
   padding: 0;
   display: flex;
-  width: 690px;
   list-style-type: none;
+}
+
+@media (max-width: 768px) {
+  .tech__list {
+    margin-top: 83px;
+  }
 }
