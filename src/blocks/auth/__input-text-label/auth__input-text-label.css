@@ -1,0 +1,7 @@
+.auth__input-text-label {
+  margin-top: 6px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
