@@ -1,0 +1,42 @@
+@import url(../vendor/fonts/fonts.css);
+
+@import url(../blocks/page/page.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__nav/header__nav.css);
+@import url(../blocks/header/__films/header__films.css);
+@import url(../blocks/header/__link/header__link.css);
+@import url(../blocks/header/__link/_active/header__link_active.css);
+@import url(../blocks/header/__profile/header__profile.css);
+
+@import url(../blocks/search/search.css);
+@import url(../blocks/search/__input-text/search__input-text.css);
+@import url(../blocks/search/__input-container/search__input-container.css);
+@import url(../blocks/search/__btn-submit/search__btn-submit.css);
+@import url(../blocks/search/__shortfilm-label/search__shortfilm-label.css);
+@import url(../blocks/search/__checkbox/search__checkbox.css);
+@import url(../blocks/search/__shortfilm/search__shortfilm.css);
+@import url(../blocks/search/__line/search__line.css);
+@import url(../blocks/search/__shortfilm-text/search__shortfilm-text.css);
+
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/cards/_type/cards_type_no-full.css);
+
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image-container/card__image-container.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__info/card__info.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__btn-trash/card__btn-trash.css);
+@import url(../blocks/card/__duration/card__duration.css);
+
+@import url(../blocks/more/more.css);
+@import url(../blocks/more/__btn/more__btn.css);
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__title/footer__title.css);
+@import url(../blocks/footer/__info/footer__info.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/footer/__links/footer__links.css);
+@import url(../blocks/footer/__link/footer__link.css);
