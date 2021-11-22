@@ -1,0 +1,6 @@
+.card__image-container {
+  width: 100%;
+  position: relative;
+  padding-top: calc(100% / 364 * 203);
+  overflow: hidden;
+}

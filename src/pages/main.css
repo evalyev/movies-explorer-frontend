@@ -19,3 +19,13 @@
 @import url(../blocks/search/__shortfilm/search__shortfilm.css);
 @import url(../blocks/search/__line/search__line.css);
 @import url(../blocks/search/__shortfilm-text/search__shortfilm-text.css);
+
+@import url(../blocks/cards/cards.css);
+
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image-container/card__image-container.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__info/card__info.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__btn-like/card__btn-like.css);
+@import url(../blocks/card/__duration/card__duration.css);
