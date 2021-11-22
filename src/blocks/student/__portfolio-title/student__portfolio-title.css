@@ -6,3 +6,10 @@
   line-height: 20px;
   color: #A0A0A0;
 }
+
+@media (max-width: 600px) {
+  .student__portfolio-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

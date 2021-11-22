@@ -11,3 +11,11 @@
     margin-top: 80px;
   }
 }
+
+@media (max-width: 600px) {
+  .tech__title {
+    margin-top: 60px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+}

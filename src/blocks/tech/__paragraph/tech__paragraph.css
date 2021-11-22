@@ -13,3 +13,11 @@
     margin-top: 22px;
   }
 }
+
+@media (max-width: 600px) {
+  .tech__paragraph {
+    margin-top: 24px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

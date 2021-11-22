@@ -4,3 +4,10 @@
   display: flex;
   list-style-type: none;
 }
+
+@media (max-width: 600px) {
+  .footer__links {
+    flex-direction: column;
+    align-items: center;
+  }
+}

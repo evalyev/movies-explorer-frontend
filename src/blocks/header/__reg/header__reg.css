@@ -1,8 +1,14 @@
 .header__reg {
   color: #fff;
   text-decoration: none;
-  margin-right: 30px;
+  margin-right: 14px;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+}
+
+@media (max-width: 600px) {
+  .header__reg {
+    font-size: 10px;
+  }
 }

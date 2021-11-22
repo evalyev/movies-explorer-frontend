@@ -5,3 +5,10 @@
   width: 100%;
   padding: 9px 0;
 }
+
+@media (max-width: 600px) {
+  .about__period {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}

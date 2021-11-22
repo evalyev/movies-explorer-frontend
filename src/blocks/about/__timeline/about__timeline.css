@@ -8,3 +8,9 @@
     margin-top: 93px;
   }
 }
+
+@media (max-width: 600px) {
+  .about__timeline {
+    margin-top: 60px;
+  }
+}

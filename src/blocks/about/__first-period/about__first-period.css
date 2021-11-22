@@ -1,5 +1,5 @@
 .about__first-period {
-  width: calc(100% / 5);
+  width: calc(100% / 284 * 100);
   display: flex;
   flex-direction: column;
   align-items: center;

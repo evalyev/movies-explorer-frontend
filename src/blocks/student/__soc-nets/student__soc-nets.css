@@ -4,3 +4,9 @@
   list-style-type: none;
   display: flex;
 }
+
+@media (max-width: 600px) {
+  .student__soc-nets {
+    margin-top: 40px;
+  }
+}

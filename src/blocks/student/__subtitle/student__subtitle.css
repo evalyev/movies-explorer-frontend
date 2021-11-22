@@ -13,3 +13,11 @@
     margin-top: 16px;
   }
 }
+
+@media (max-width: 600px) {
+  .student__subtitle {
+    font-size: 11px;
+    line-height: 16px;
+    margin-top: 20px;
+  }
+}

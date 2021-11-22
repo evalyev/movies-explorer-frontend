@@ -11,3 +11,19 @@
     margin: auto auto 0;
   }
 }
+
+@media (max-width: 768px) {
+  .header__land-logo {
+    margin: 0 auto 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__land-logo {
+    margin: 0;
+    width: 680px;
+    height: 230px;
+    transform: translateX(calc((100vw - 680px) / 2 - 14px));
+    object-position: center;
+  }
+}

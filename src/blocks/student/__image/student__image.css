@@ -12,3 +12,10 @@
     height: 307px;
   }
 }
+
+@media (max-width: 768px) {
+  .student__image {
+    width: 292px;
+    height: 352px;
+  }
+}

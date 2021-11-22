@@ -4,3 +4,10 @@
   margin-top: 70px;
   justify-content: space-between;
 }
+
+@media (max-width: 600px) {
+  .about__two-columns {
+    margin-top: 60px;
+    flex-direction: column;
+  }
+}

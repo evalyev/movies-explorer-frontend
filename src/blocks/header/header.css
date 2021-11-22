@@ -12,3 +12,10 @@
     padding: 0 30px;
   }
 }
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0 14px;
+    overflow: hidden;
+  }
+}

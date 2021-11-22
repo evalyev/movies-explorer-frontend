@@ -10,3 +10,9 @@
     padding: 90px 50px;
   }
 }
+
+@media (max-width: 600px) {
+  .tech {
+    padding: 70px 18px;
+  }
+}

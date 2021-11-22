@@ -29,3 +29,61 @@
     width: 84px;
   }
 }
+
+@media (max-width: 767px) {
+  .tech__list-item {
+    margin-top: 10px;
+  }
+
+  .tech__list-item:nth-child(6n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 670px) {
+  .tech__list-item:nth-child(6n) {
+    margin-right: 10px;
+  }
+
+  .tech__list-item:nth-child(5n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .tech__list-item {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 513px) {
+  .tech__list-item:nth-child(5n) {
+    margin-right: 10px;
+  }
+
+  .tech__list-item:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 418px) {
+  .tech__list-item:nth-child(4n) {
+    margin-right: 10px;
+  }
+
+  .tech__list-item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 324px) {
+  .tech__list-item:nth-child(3n) {
+    margin-right: 10px;
+  }
+
+  .tech__list-item:nth-child(2n) {
+    margin-right: 0;
+  }
+}

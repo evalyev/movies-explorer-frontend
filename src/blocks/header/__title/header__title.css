@@ -1,7 +1,7 @@
 .header__title {
   color: #fff;
   margin-top: 50px;
-  width: 626px;
+  max-width: 626px;
   font-size: 40px;
   line-height: 52px;
   letter-spacing: -0.04em;
@@ -10,7 +10,16 @@
 
 @media (max-width: 768px) {
   .header__title {
-    margin-bottom: 140px;
     margin-top: auto;
+    margin-bottom: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__title {
+    margin-top: 183px;
+    font-size: 31px;
+    line-height: 39px;
+    text-align: center;
   }
 }

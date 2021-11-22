@@ -5,3 +5,10 @@
   line-height: 17px;
   color: #A0A0A0;
 }
+
+@media (max-width: 600px) {
+  .about__period-name {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}
