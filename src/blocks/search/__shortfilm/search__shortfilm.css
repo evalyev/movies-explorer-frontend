@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.search__shortfilm:hover {
+  cursor: pointer;
+}
+
 .search__checkbox + .search__shortfilm::after {
   content: "";
   position: absolute;
