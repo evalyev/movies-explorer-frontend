@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/login.css">
+  <title>Document</title>
+</head>
+
+<body class="page">
+
+  <header class="header header_type_auth">
+    <nav class="header__nav header__nav_type_auth">
+      <a href="#" class="header__logo"></a>
+    </nav>
+    <h1 class="header__title_type_auth">Рады видеть!</h1>
+  </header>
+
+  <main class="content">
+    <section class="auth">
+      <form class="auth__form" name="auth">
+        <label class="auth__input-text-label">
+          <span class="auth__input-text-placeholder">E-mail</span>
+          <input class="auth__input-text" type="email" name="input-email" value="bak.evsha@gmail.com ">
+        </label>
+        <span class="auth__line"></span>
+        <label class="auth__input-text-label">
+          <span class="auth__input-text-placeholder">Пароль</span>
+          <input class="auth__input-text" type="password" name="input-password" value="asdasdasda" >
+          <span class="auth__input-text-error">Что-то пошло не так...</span>
+        </label>
+        <button class="auth__btn-reg">Войти</button>
+      </form>
+
+      <div class="auth__bottom">
+        <span class="auth__question">Ещё не зарегистрированы?</span>
+      <a class="auth__link" href="#">Регистрация</a>
+      </div>
+    </section>
+
+    <section class="more">
+    </section>
+
+  </main>
+
+</body>
+
+</html>
