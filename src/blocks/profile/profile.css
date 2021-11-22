@@ -1,0 +1,7 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  padding: 74px 70px 70px;
+  height: calc(100vh - 74px);
+  box-sizing: border-box;
+}
