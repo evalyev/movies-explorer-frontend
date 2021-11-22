@@ -1,0 +1,30 @@
+.search__shortfilm {
+  width: 36px;
+  height: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(50, 50, 71, 0.08), 0px 4px 8px rgba(50, 50, 71, 0.06);
+  position: relative;
+}
+
+.search__checkbox + .search__shortfilm::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #F5F5F5;
+  top: 2px;
+  left: 2px;
+}
+
+.search__checkbox:checked + .search__shortfilm::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #2BE080;
+  top: 2px;
+  right: 2px;
+  left: auto;
+}

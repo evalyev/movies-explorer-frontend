@@ -1,0 +1,6 @@
+.header__films {
+  margin: 0 0 0 auto;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}

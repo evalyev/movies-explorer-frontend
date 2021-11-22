@@ -1,0 +1,14 @@
+.search__input-text {
+  margin: 0;
+  width: 100%;
+  display: block;
+  padding: 14px 0 14px 22px;
+  box-sizing: border-box;
+  border-radius: 40px;
+  background-color: #F9F9F9;
+  border: none;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 17px;
+  color: #A0A0A0;
+}
