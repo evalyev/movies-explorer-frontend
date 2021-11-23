@@ -9,16 +9,12 @@ function Header(props) {
       <nav className="header__nav">
         <Link className="header__logo" to="/" />
         <div className="header__auth">
-          {/* <Route path="/"> */}
-            <Link className="header__reg" to="/signup">
-              Регистрация
-            </Link>
-          {/* </Route> */}
-          {/* <Route path="/"> */}
-            <Link className="header__login" to="/signin">
+          <Link className="header__reg" to="/signup">
+            Регистрация
+          </Link>
+          <Link className="header__login" to="/signin">
             Войти
-            </Link>
-          {/* </Route> */}
+          </Link>
         </div>
 
       </nav>
