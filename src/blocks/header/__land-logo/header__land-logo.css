@@ -25,5 +25,6 @@
     height: 230px;
     transform: translateX(calc((100vw - 680px) / 2 - 14px));
     object-position: center;
+    margin-top: auto;
   }
 }

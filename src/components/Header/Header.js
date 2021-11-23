@@ -93,7 +93,7 @@ function Header(props) {
           </nav>
 
           <Routes>
-            <Route exact path="/" element={
+            <Route path="/" element={
               <>
                 <h1 className="header__title">Учебный проект студента факультета Веб-разработки.</h1>
                 <img className="header__land-logo" src={backLogo} alt="" />

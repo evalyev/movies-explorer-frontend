@@ -9,3 +9,9 @@
     padding-bottom: 70px;
   }
 }
+
+@media (max-width: 600px) {
+  .header_type_blue {
+    padding-bottom: 40px;
+  }
+}
