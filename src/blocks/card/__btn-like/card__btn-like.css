@@ -1,7 +1,8 @@
 .card__btn-like {
   width: 14px;
   height: 12px;
-  background-image: url(../../../images/card__like.svg);
+  background: none;
+  background-image: url(../../../images/card__like_disabled.svg);
   background-repeat: no-repeat;
   background-size: 14px;
   border: none;

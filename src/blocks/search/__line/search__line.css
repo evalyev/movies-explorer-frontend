@@ -2,3 +2,9 @@
   margin-top: 69px;
   border-bottom: solid 1px #E8E8E8;
 }
+
+@media (max-width: 768px) {
+  .search__line {
+    margin-top: 50px;
+  }
+}
