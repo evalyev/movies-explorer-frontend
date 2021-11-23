@@ -9,3 +9,23 @@
   color: #FF6838;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .error__link {
+    bottom: -184px;
+  }
+}
+
+@media (max-height: 600px) {
+  .error__link {
+    bottom: -60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .error__link {
+    bottom: 30px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

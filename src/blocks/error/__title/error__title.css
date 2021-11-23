@@ -5,3 +5,11 @@
   margin: 0 0 5px;
   padding: 0;
 }
+
+@media (max-width: 600px) {
+  .error__title {
+    font-size: 80px;
+    line-height: 97px;
+    margin-bottom: 10px;
+  }
+}
