@@ -16,3 +16,9 @@
 .more__btn:hover {
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .more__btn {
+    width: 240px;
+  }
+}

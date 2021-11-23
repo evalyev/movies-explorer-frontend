@@ -12,3 +12,10 @@
   line-height: 17px;
   color: #A0A0A0;
 }
+
+@media (max-width: 768px) {
+  .search__input-text {
+    font-size: 11px;
+    padding-left: 19px;
+  }
+}

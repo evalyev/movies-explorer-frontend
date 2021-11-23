@@ -5,3 +5,10 @@
   color: #A0A0A0;
   margin-left: 16px;
 }
+
+@media (max-width: 600px) {
+  .card__duration {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
