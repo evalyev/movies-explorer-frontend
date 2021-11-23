@@ -1,9 +1,9 @@
 .card__btn-trash {
-  width: 6.84px;
-  height: 6.72px;
+  width: 8px;
+  height: 8px;
   background-image: url(../../../images/card__trash.svg);
   background-repeat: no-repeat;
-  background-size: 6.84px;
+  background-size: 8px;
   border: none;
   outline: none;
   display: none;
