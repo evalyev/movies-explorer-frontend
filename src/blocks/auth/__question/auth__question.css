@@ -4,3 +4,10 @@
   line-height: 17px;
   color: #A0A0A0;
 }
+
+@media (max-width: 600px) {
+  .auth__question {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

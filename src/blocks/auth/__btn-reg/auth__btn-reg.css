@@ -17,3 +17,18 @@
 .auth__btn-reg:hover {
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .auth__btn-reg {
+    margin-top: 152px;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth__btn-reg {
+    margin-top: auto;
+    margin-bottom: 14px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
