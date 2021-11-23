@@ -11,3 +11,10 @@
   margin-left: 50px;
   border-radius: 20px;
 }
+
+@media (max-width: 768px) {
+  .header__profile {
+    margin-left: 0;
+    margin-top: auto;
+  }
+}
