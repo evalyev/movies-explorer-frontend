@@ -5,3 +5,17 @@
   width: 410px;
   height: 100vh;
 }
+
+@media (max-width: 768px) {
+  .profile__form {
+    margin-top: 96px;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile__form {
+    margin-top: 80px;
+    height: 100vh;
+  }
+}

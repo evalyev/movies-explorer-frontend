@@ -14,17 +14,24 @@
   <header class="header">
     <nav class="header__nav">
       <a href="#" class="header__logo"></a>
-      <ul class="header__films">
+      <button class="header__burger" type="button"></button>
+
+      <div class="header__menu">
+        <button class="header__btn-close" type="button"></button>
+        <ul class="header__films">
+          <li class="header__hidden-list">
+            <a class="header__link" href="#">Главная</a>
+          </li>
         <li>
-          <a class="header__link" href="#">Фильмы</a>
+          <h1 class="header__link header__link_active">Фильмы</h1>
         </li>
         <li>
           <a class="header__link" href="#">Сохранённые фильмы</a>
         </li>
       </ul>
-      </div>
 
       <a class="header__profile" href="#">Аккаунт</a>
+      </div>
     </nav>
   </header>
 
@@ -38,7 +45,7 @@
         </label>
         <span class="profile__line"></span>
         <label class="profile__input-text-label">
-          <span class="profile__input-text-placeholder">Email</span>
+          <span class="profile__input-text-placeholder">E-mail</span>
           <input class="profile__input-text" type="email" name="input-email" value="bak.evsha@gmail.com" >
         </label>
         <button class="profile__btn-edit">Редактировать</button>

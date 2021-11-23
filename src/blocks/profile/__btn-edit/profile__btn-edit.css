@@ -13,3 +13,17 @@
 .profile__btn-edit:hover {
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .profile__btn-edit {
+    margin-top: 196px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile__btn-edit {
+    margin-top: auto;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
