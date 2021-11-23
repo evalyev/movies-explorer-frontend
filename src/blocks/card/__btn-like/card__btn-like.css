@@ -11,4 +11,5 @@
 
 .card__btn-like:hover {
   cursor: pointer;
+  opacity: 0.8;
 }

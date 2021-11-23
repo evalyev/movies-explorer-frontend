@@ -10,6 +10,10 @@
   text-decoration: none;
 }
 
+.error__link:hover {
+  opacity: 0.7;
+}
+
 @media (max-width: 768px) {
   .error__link {
     bottom: -184px;

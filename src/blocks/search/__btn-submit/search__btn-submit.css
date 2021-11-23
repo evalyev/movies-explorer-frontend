@@ -16,4 +16,5 @@
 
 .search__btn-submit:hover {
   cursor: pointer;
+  opacity: 0.8;
 }

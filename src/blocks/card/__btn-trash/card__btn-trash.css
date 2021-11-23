@@ -11,6 +11,7 @@
 
 .card__btn-trash:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .card:hover .card__btn-trash {

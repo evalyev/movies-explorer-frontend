@@ -9,6 +9,10 @@
   line-height: 16px;
 }
 
+.header__login:hover {
+  opacity: 0.7;
+}
+
 @media (max-width: 600px) {
   .header__login {
     font-size: 10px;
