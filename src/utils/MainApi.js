@@ -14,7 +14,9 @@ class MainApi {
   }
 
   getUserInfo() {
-    return fetch(this._url + '/users/me')
+    return fetch(this._url + '/users/me', {
+      credentials: 'include',
+    })
       .then(this._checkResponse)
 
   }
@@ -23,6 +25,7 @@ class MainApi {
     return fetch(this._url + '/users/me', {
       method: 'PATCH',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         name: dataUserName,
         email: dataUserEmail
@@ -32,7 +35,9 @@ class MainApi {
   }
 
   getMyMovies() {
-    return fetch(this._url + '/movies')
+    return fetch(this._url + '/movies', {
+      credentials: 'include',
+    })
       .then(this._checkResponse)
   }
 
@@ -40,9 +45,10 @@ class MainApi {
     return fetch(this._url + '/movies', {
       method: 'POST',
       headers: this._headers,
-      body: JSON.stringify({
+      credentials: 'include',
+      body: JSON.stringify(
         data
-      })
+      )
     })
       .then(this._checkResponse)
 
@@ -53,8 +59,40 @@ class MainApi {
     return fetch(this._url + '/cards/' + movieId, {
       method: 'DELETE',
       headers: this._headers,
+      credentials: 'include',
     })
       .then(this._checkResponse)
+  }
+
+  register(name, email, password) {
+    return fetch(this._url + "/signup", {
+      method: 'POST',
+      headers: this._headers,
+      credentials: 'include',
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password
+      })
+    })
+  }
+
+  login(email, password) {
+    return fetch(this._url + "/signin", {
+      method: 'POST',
+      headers: this._headers,
+      credentials: 'include',
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    }) 
+  }
+
+  logout() {
+    return fetch(this._url + 'signout', {
+      credentials: 'include',
+    })
   }
 
 }

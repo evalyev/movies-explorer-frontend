@@ -32,15 +32,15 @@ function Main(props) {
         } />
 
         <Route path="/profile" element={
-          <Profile />
+          <Profile onLogout={props.onLogout} onEditProfile={props.onEditProfile} />
         } />
 
         <Route path="/signup" element={
-          <Register />
+          <Register onRegister={props.onRegister} />
         } />
 
         <Route path="/signin" element={
-          <Login />
+          <Login onLogin={props.onLogin} />
         } />
 
         <Route path="/*" element={

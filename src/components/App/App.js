@@ -5,14 +5,15 @@ import Footer from '../Footer/Footer';
 import { useLocation } from 'react-router-dom';
 import { routes } from '../../utils/constants';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { LoggedInContext } from '../../contexts/LoggedInContext';
 import { useState, useEffect } from 'react';
 import mainApi from '../../utils/MainApi';
-import moviesApi from '../../utils/MoviesApi';
 
 function App() {
   const location = useLocation();
   const [currentUser, setCurrentUser] = useState(null);
   const [movies, setMovies] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   function isErrorPath() {
     if (routes.includes(location.pathname)) {
@@ -21,38 +22,52 @@ function App() {
     return true;
   }
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   if (token) {
-  //     Promise.all([mainApi.getUserInfo(), api.getInitialCards(), auth.getContent(token)])
-  //       .then(([userInfo, cardItems, authInfo]) => {
-  //         if (authInfo.data) {
-  //           authInfo = authInfo.data;
-  //           userInfo.email = authInfo.email;
-  //           setCurrentUser(userInfo);
-  //           setMovies(cardItems);
-  //           // setLoggedIn(true);
-  //         }
-  //       })
-  //       .catch((err) => {
-  //         console.log(err); // выведем ошибку в консоль
-  //       });
-  //   }
+  function handleRegister(name, email, password) {
+    return mainApi.register(name, email, password)
+      .catch(err => console.log(err))
+  }
 
-  // }, [isLoggOut]);
+  function handleLogin(email, password) {
+    return mainApi.login(email, password)
+      .catch(err => console.log(err))
+  }
+
+  function handlgeLogout() {
+    return mainApi.logout()
+    .catch(err => console.log(err))
+  }
+
+  function handleEditProfile(name, email) {
+    return mainApi.setUserInfo(name, email)
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    mainApi.getUserInfo()
+      .then(res => {
+        if (res) {
+          setLoggedIn(true);
+          setCurrentUser(res);
+        }
+      })
+      .catch(err => console.log(err))
+
+  }, [loggedIn]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      { !isErrorPath() &&
-      <Header />
-      }
-      
-      <Main />
+      <LoggedInContext.Provider value={loggedIn}>
+        {!isErrorPath() &&
+          <Header />
+        }
 
-      {["/", "/movies", "/saved-movies"].includes(location.pathname) &&
-        <Footer />
-      }
-      
+        <Main onRegister={handleRegister} onLogin={handleLogin} onEditProfile={handleEditProfile} onLogout={handlgeLogout} />
+
+        {["/", "/movies", "/saved-movies"].includes(location.pathname) &&
+          <Footer />
+        }
+      </LoggedInContext.Provider>
+
     </CurrentUserContext.Provider>
   );
 }

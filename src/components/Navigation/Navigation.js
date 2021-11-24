@@ -1,15 +1,18 @@
 import './Navigation.css';
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import React from 'react';
+import { LoggedInContext } from '../../contexts/LoggedInContext';
 
 function Navigation(props) {
-  const location = useLocation()
+  const location = useLocation();
+  const loggedIn = React.useContext(LoggedInContext);
 
   return (
     <nav className={`header__nav ${["/signin", "/signup"].includes(location.pathname) ? "header__nav_type_auth" : ""}`}>
       <Link className="header__logo" to="/" />
       <Routes>
-        <Route exact path="/" element={
+        {!loggedIn &&
+          <Route exact path="/" element={
           <div className="header__auth">
             <Link className="header__reg" to="/signup">
               Регистрация
@@ -19,8 +22,11 @@ function Navigation(props) {
             </Link>
           </div>
         } />
+        }
+        
 
-        <Route path={["/movies", "/saved-movies", "/profile"].includes(location.pathname) ? location.pathname : "/movies"} element={
+        <Route path={["/movies", "/saved-movies", "/profile", "/"].includes(location.pathname) ? location.pathname : "/movies"} element={
+          (location.pathname === '/' && loggedIn || location.pathname !== '/') &&
           <>
             <button className="header__burger" type="button"></button>
 

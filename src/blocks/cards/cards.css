@@ -16,6 +16,11 @@
 @media (max-width: 600px) {
   .cards {
     padding: 40px 10px 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
     grid-template-columns: repeat(1, 100%);
     gap: 14px;
   }

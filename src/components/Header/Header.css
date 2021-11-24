@@ -21,3 +21,4 @@
 @import url(../../blocks/header/__title/header__title.css);
 @import url(../../blocks/header/_type/header_type_blue.css);
 @import url(../../blocks/header/_type/header_type_auth.css);
+@import url(../../blocks/header/__promo/header__promo.css);

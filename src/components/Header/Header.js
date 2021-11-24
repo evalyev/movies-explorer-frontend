@@ -5,13 +5,15 @@ import React from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import Navigation from '../Navigation/Navigation';
 import Promo from '../Promo/Promo';
+import { LoggedInContext } from '../../contexts/LoggedInContext';
 
 function Header(props) {
-  const location = useLocation()
+  const location = useLocation();
+  const loggedIn = React.useContext(LoggedInContext);
 
   return (
     <>
-      <header className={`header ${location.pathname === "/" ? "header_type_blue" : ""} ${["/signup", "/signin"].includes(location.pathname) ? "header_type_auth" : ""}`}>
+      <header className={`header ${(location.pathname === "/" && !loggedIn) ? "header_type_blue" : ""} ${["/signup", "/signin"].includes(location.pathname) ? "header_type_auth" : ""}`}>
 
         <Navigation />
 

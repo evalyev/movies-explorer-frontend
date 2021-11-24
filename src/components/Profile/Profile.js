@@ -1,8 +1,10 @@
 import './Profile.css';
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Profile(props) {
+  const currentUser = React.useContext(CurrentUserContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -20,12 +22,12 @@ function Profile(props) {
       <form className="profile__form" name="profile">
         <label className="profile__input-text-label">
           <span className="profile__input-text-placeholder">Имя</span>
-          <input className="profile__input-text" type="text" name="input-name" value={name} onChange={changeName} />
+          <input className="profile__input-text" type="text" name="input-name" value={name} onChange={changeName} pattern="[A-Za-zА-Яа-я\-\s]{1,}" required />
         </label>
         <span className="profile__line"></span>
         <label className="profile__input-text-label">
           <span className="profile__input-text-placeholder">E-mail</span>
-          <input className="profile__input-text" type="email" name="input-email" value={email} onChange={changeEmail} />
+          <input className="profile__input-text" type="email" name="input-email" value={email} onChange={changeEmail} required />
         </label>
         <button className="profile__btn-edit">Редактировать</button>
       </form>

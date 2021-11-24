@@ -23,7 +23,7 @@ function Movies(props) {
       setMaxMovies(12);
       setMoreCount(3);
     }
-    else if (document.documentElement.clientWidth > 600) {
+    else if (document.documentElement.clientWidth > 480) {
       setMaxMovies(8);
       setMoreCount(2);
     }
@@ -39,7 +39,7 @@ function Movies(props) {
 
         {movies.map((movie, index) => {
           if (index < maxMovies) {
-            return <MoviesCard movie={movie} />
+            return <MoviesCard key={movie.id} movie={movie} />
           }
         })
 

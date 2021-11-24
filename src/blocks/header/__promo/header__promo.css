@@ -1,0 +1,27 @@
+.header__promo {
+  height: calc(100vh - 74px);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 74px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #465DFF;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+@media (max-width: 768px) {
+  .header__promo {
+    padding: 0 30px 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__promo {
+    padding-bottom: 40px;
+  }
+}
