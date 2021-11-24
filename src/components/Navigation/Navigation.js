@@ -7,6 +7,14 @@ function Navigation(props) {
   const location = useLocation();
   const loggedIn = React.useContext(LoggedInContext);
 
+  function handleOpenMenu() {
+    document.querySelector('.header__menu').classList.add('header__menu_active');
+  }
+
+  function handleCloseMenu() {
+    document.querySelector('.header__menu_active').classList.remove('header__menu_active');
+  }
+
   return (
     <nav className={`header__nav ${["/signin", "/signup"].includes(location.pathname) ? "header__nav_type_auth" : ""}`}>
       <Link className="header__logo" to="/" />
@@ -28,13 +36,13 @@ function Navigation(props) {
         <Route path={["/movies", "/saved-movies", "/profile", "/"].includes(location.pathname) ? location.pathname : "/movies"} element={
           (location.pathname === '/' && loggedIn || location.pathname !== '/') &&
           <>
-            <button className="header__burger" type="button"></button>
+            <button className="header__burger" type="button" onClick={handleOpenMenu}></button>
 
             <div className="header__menu">
-              <button className="header__btn-close" type="button"></button>
+              <button className="header__btn-close" type="button" onClick={handleCloseMenu}></button>
               <ul className="header__films">
                 <li className="header__hidden-list">
-                  <Link className="header__link" to="/">
+                  <Link className={`header__link ${location.pathname === '/' ? "header__link_active" : ""}`} to="/">
                     Главная
                   </Link>
                 </li>

@@ -32,7 +32,7 @@ function Main(props) {
         } />
 
         <Route path="/profile" element={
-          <Profile onLogout={props.onLogout} onEditProfile={props.onEditProfile} />
+          <Profile onLogout={props.onLogout} onEditProfile={props.onEditProfile} changeCurrentUser={props.changeCurrentUser} />
         } />
 
         <Route path="/signup" element={

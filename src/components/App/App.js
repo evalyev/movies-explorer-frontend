@@ -29,16 +29,36 @@ function App() {
 
   function handleLogin(email, password) {
     return mainApi.login(email, password)
+      .then(res => {
+        if (res) {
+          setLoggedIn(true);
+        }
+        return res;
+      })
       .catch(err => console.log(err))
   }
 
   function handlgeLogout() {
     return mainApi.logout()
+      .then(res => {
+        if (res) {
+          setLoggedIn(false);
+          setCurrentUser(null);
+        }
+        return res;
+      })
     .catch(err => console.log(err))
   }
 
   function handleEditProfile(name, email) {
     return mainApi.setUserInfo(name, email)
+      .then(res => {
+        if (res) {
+          setCurrentUser({...currentUser, data: {...currentUser.data, name: name, email: email}});
+        }
+        return res;
+      }
+      )
       .catch(err => console.log(err))
   }
 
@@ -61,7 +81,7 @@ function App() {
           <Header />
         }
 
-        <Main onRegister={handleRegister} onLogin={handleLogin} onEditProfile={handleEditProfile} onLogout={handlgeLogout} />
+        <Main onRegister={handleRegister} onLogin={handleLogin} onEditProfile={handleEditProfile} onLogout={handlgeLogout} changeCurrentUser={setCurrentUser} />
 
         {["/", "/movies", "/saved-movies"].includes(location.pathname) &&
           <Footer />

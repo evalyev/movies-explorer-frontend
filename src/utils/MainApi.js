@@ -90,7 +90,7 @@ class MainApi {
   }
 
   logout() {
-    return fetch(this._url + 'signout', {
+    return fetch(this._url + '/signout', {
       credentials: 'include',
     })
   }
