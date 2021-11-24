@@ -4,6 +4,7 @@
   line-height: 17px;
   color: #FF6838;
   text-decoration: none;
+  margin-left: 6px;
 }
 
 .auth__link:hover {
