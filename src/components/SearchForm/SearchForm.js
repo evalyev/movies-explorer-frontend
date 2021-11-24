@@ -1,7 +1,6 @@
 import './SearchForm.css';
 import React from 'react';
-import { routes } from '../../utils/constants';
-import { useState, useEffect } from 'react';
+import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 
 function SearchForm(props) {
 
@@ -9,13 +8,9 @@ function SearchForm(props) {
     <form className="search" name="search-form">
       <div className="search__input-container">
         <input className="search__input-text" name="search-input" type="text" placeholder="Фильм" />
-        <button className ="search__btn-submit" type ="submit"></button>
+        <button className="search__btn-submit" type="submit"></button>
       </div>
-      <label className="search__shortfilm-label">
-        <input className="search__checkbox" type="checkbox" name="shortfilm" value="active" />
-        <span className ="search__shortfilm"></span>
-        <span className ="search__shortfilm-text">Короткометражки</span>
-      </label>
+      <FilterCheckbox />
       <span className="search__line"></span>
     </form>
   );

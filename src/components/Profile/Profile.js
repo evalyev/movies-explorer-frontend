@@ -1,5 +1,4 @@
 import './Profile.css';
-import { Link, Route, Routes } from "react-router-dom";
 import React from 'react';
 
 function Profile(props) {

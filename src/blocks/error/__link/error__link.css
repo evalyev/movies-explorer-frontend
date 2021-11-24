@@ -8,10 +8,15 @@
   text-align: center;
   color: #FF6838;
   text-decoration: none;
+  transform: translateX(-50%);
+  background: none;
+  outline: none;
+  border: none;
 }
 
 .error__link:hover {
   opacity: 0.7;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

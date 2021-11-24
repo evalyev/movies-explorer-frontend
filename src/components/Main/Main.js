@@ -1,5 +1,5 @@
 import './Main.css';
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import React from 'react';
 import AboutProject from '../AboutProject/AboutProject';
 import Techs from '../Techs/Techs';
@@ -8,6 +8,8 @@ import { useLocation } from 'react-router-dom';
 import Movies from '../Movies/Movies';
 import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
+import Login from '../Login/Login';
+import Error from '../Error/Error';
 
 function Main(props) {
   const location = useLocation();
@@ -35,6 +37,14 @@ function Main(props) {
 
         <Route path="/signup" element={
           <Register />
+        } />
+
+        <Route path="/signin" element={
+          <Login />
+        } />
+
+        <Route path="/*" element={
+          <Error />
         } />
 
       </Routes>
