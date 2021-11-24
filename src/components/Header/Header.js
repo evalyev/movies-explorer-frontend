@@ -9,7 +9,7 @@ import SearchForm from '../SearchForm/SearchForm';
 
 function Header(props) {
   const [isErrorPath, setIsErrorPath] = useState(false);
-  let location = useLocation()
+  const location = useLocation()
 
   function isErrorPathFunc() {
     if (routes.includes(location.pathname)) {

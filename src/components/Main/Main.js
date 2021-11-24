@@ -4,8 +4,12 @@ import React from 'react';
 import AboutProject from '../AboutProject/AboutProject';
 import Techs from '../Techs/Techs';
 import AboutMe from '../AboutMe/AboutMe';
+import { useLocation } from 'react-router-dom';
+import Movies from '../Movies/Movies';
 
 function Main(props) {
+  const location = useLocation();
+
   return (
     <main className="content">
 
@@ -17,6 +21,10 @@ function Main(props) {
             <Techs />
             <AboutMe />
           </>
+        } />
+
+        <Route path={["/movies", "/saved-movies"].includes(location.pathname) ? location.pathname : "/movies"} element={
+          <Movies />
         } />
 
       </Routes>
