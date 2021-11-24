@@ -6,7 +6,7 @@ function Navigation(props) {
   const location = useLocation()
 
   return (
-    <nav className="header__nav">
+    <nav className={`header__nav ${["/signin", "/signup"].includes(location.pathname) ? "header__nav_type_auth" : ""}`}>
       <Link className="header__logo" to="/" />
       <Routes>
         <Route exact path="/" element={
