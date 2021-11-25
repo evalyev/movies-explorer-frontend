@@ -22,8 +22,12 @@ function Header(props) {
             <Promo />
           } />
 
-          <Route path={["/movies", "/saved-movies"].includes(location.pathname) ? location.pathname : "/movies"} element={
-            <SearchForm />
+          <Route path="/movies" element={
+            <SearchForm onSearch={props.onSearch} />
+          } />
+
+          <Route path="/saved-movies" element={
+            <SearchForm onSearch={props.onMySearch} />
           } />
 
           <Route path={["/signin", "/signup"].includes(location.pathname) ? location.pathname : "/signin"} element={

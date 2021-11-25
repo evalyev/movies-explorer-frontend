@@ -8,8 +8,6 @@ import moviesApi from '../../utils/MoviesApi';
 import SavedMovies from '../SavedMovies/SavedMovies';
 
 function Movies(props) {
-  const [movies, setMovies] = useState([]);
-  const [myMovies, setMyMovies] = useState([]);
   const [maxMovies, setMaxMovies] = useState(0);
   const [moreCount, setMoreCount] = useState(0);
   const location = useLocation();
@@ -23,7 +21,7 @@ function Movies(props) {
       .then(res => {
         if (res) {
           props.onGetMyMovies()
-            .then(res => setMyMovies(res.data))
+            .then(res => props.setMyMovies(res.data))
         }
         return res;
       })
@@ -34,22 +32,22 @@ function Movies(props) {
       .then(res => {
         if (res) {
           props.onGetMyMovies()
-            .then(res => setMyMovies(res.data))
+            .then(res => props.setMyMovies(res.data))
         }
         return res;
       })
   }
 
   useEffect(() => {
-    moviesApi.getMovies()
-      .then(res => {
-        return res;
-      })
-      .then(res => setMovies(res))
-      .catch(err => console.log(err));
+    // moviesApi.getMovies()
+    //   .then(res => {
+    //     return res;
+    //   })
+    //   .then(res => props.setMovies(res))
+    //   .catch(err => console.log(err));
 
     props.onGetMyMovies()
-      .then(res => setMyMovies(res.data))
+      .then(res => props.setMyMovies(res.data))
       .catch(err => console.log(err));
 
     if (document.documentElement.clientWidth > 768) {
@@ -71,10 +69,10 @@ function Movies(props) {
       <section className="cards">
 
         {location.pathname === '/movies' ?
-          movies.map((movie, index) => {
+          props.movies.map((movie, index) => {
             if (index < maxMovies) {
               let saved = false;
-              const copyMyMovie = myMovies.find(item => {
+              const copyMyMovie = props.myMovies.find(item => {
                 if (item.movieId === movie.id) return true;
                 else return false;
               })
@@ -86,7 +84,7 @@ function Movies(props) {
             }
           }) :
           (location.pathname === '/saved-movies' &&
-            <SavedMovies onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} setMyMovies={setMyMovies} myMovies={myMovies} />
+            <SavedMovies onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} setMyMovies={props.setMyMovies} myMovies={props.myMovies} />
           )
 
 
@@ -95,11 +93,11 @@ function Movies(props) {
 
       </section>
 
-      {location.pathname === '/movies' && movies.length > maxMovies &&
+      {location.pathname === '/movies' && props.movies.length > maxMovies &&
         <More handleClick={handleMoreMovies} />
       }
 
-      {location.pathname === '/saved-movies' && myMovies.length > maxMovies &&
+      {location.pathname === '/saved-movies' && props.myMovies.length > maxMovies &&
         <More handleClick={handleMoreMovies} />
       }
 

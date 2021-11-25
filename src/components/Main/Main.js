@@ -31,6 +31,7 @@ function Main(props) {
         <Route path={["/movies", "/saved-movies"].includes(location.pathname) ? location.pathname : "/movies"} element={
           <ProtectedRoute
             onSaveMovie={props.onSaveMovie} onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie}
+            movies={props.movies} myMovies={props.myMovies} setMovies={props.setMovies} setMyMovies={props.setMyMovies}
             component={Movies}
           />
           // <Movies onSaveMovie={props.onSaveMovie} onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} />

@@ -8,11 +8,14 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { LoggedInContext } from '../../contexts/LoggedInContext';
 import { useState, useEffect } from 'react';
 import mainApi from '../../utils/MainApi';
+import moviesApi from '../../utils/MoviesApi';
+import { searchMovies } from '../../utils/filterFunction';
 
 function App() {
   const location = useLocation();
   const [currentUser, setCurrentUser] = useState(null);
   const [movies, setMovies] = useState([]);
+  const [myMovies, setMyMovies] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
 
   function isErrorPath() {
@@ -77,6 +80,22 @@ function App() {
       .catch(err => console.log(err))
   }
 
+  function handleSearch(searchText, isShort) {
+    moviesApi.getMovies()
+      .then(res => {
+        setMovies(searchMovies(res, searchText, isShort));
+      })
+      .catch(err => console.log(err));
+  }
+
+  function handleMySearch(searchText, isShort) {
+    mainApi.getMyMovies()
+      .then(res => {
+        setMyMovies(searchMovies(res.data, searchText, isShort));
+      })
+
+  }
+
   useEffect(() => {
     mainApi.getUserInfo()
       .then(res => {
@@ -93,11 +112,12 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <LoggedInContext.Provider value={loggedIn}>
         {!isErrorPath() &&
-          <Header />
+          <Header movies={movies} myMovies={myMovies} onSearch={handleSearch} onMySearch={handleMySearch} />
         }
 
         <Main onRegister={handleRegister} onLogin={handleLogin} onEditProfile={handleEditProfile} onLogout={handlgeLogout}
-          changeCurrentUser={setCurrentUser} onSaveMovie={handleSaveMovie} onGetMyMovies={handleGetMyMovies} onRemoveMovie={handleRemoveMyMovie} />
+          changeCurrentUser={setCurrentUser} onSaveMovie={handleSaveMovie} onGetMyMovies={handleGetMyMovies} onRemoveMovie={handleRemoveMyMovie}
+          movies={movies} myMovies={myMovies} setMovies={setMovies} setMyMovies={setMyMovies} />
 
         {["/", "/movies", "/saved-movies"].includes(location.pathname) &&
           <Footer />
