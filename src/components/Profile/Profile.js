@@ -1,6 +1,6 @@
 import './Profile.css';
 import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Profile(props) {

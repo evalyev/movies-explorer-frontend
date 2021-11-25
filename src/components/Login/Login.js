@@ -1,7 +1,7 @@
 import './Login.css';
 import { Link, Navigate } from "react-router-dom";
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import { LoggedInContext } from '../../contexts/LoggedInContext';
 
 function Login(props) {
@@ -40,7 +40,7 @@ function Login(props) {
         <label className="auth__input-text-label">
           <span className="auth__input-text-placeholder">Пароль</span>
           <input className="auth__input-text" type="password" name="input-password" value={password} onChange={changePassword} required />
-          <span className="auth__input-text-error">Что-то пошло не так...</span>
+          {/* <span className="auth__input-text-error">Что-то пошло не так...</span> */}
         </label>
         <button className="auth__btn-reg" type="submit">Войти</button>
       </form>

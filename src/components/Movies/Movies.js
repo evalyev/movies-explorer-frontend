@@ -97,10 +97,6 @@ function Movies(props) {
         <More handleClick={handleMoreMovies} />
       }
 
-      {location.pathname === '/saved-movies' && props.myMovies.length > maxMovies &&
-        <More handleClick={handleMoreMovies} />
-      }
-
     </>
   );
 }

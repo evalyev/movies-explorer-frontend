@@ -9,7 +9,7 @@ export const routes = [
 
 export const mainOptions = {
   // url: 'https://api.bakaev.nomoredomains.rocks/',
-  url: 'http://localhost:3001',
+  url: 'https://api.bakaev.nomoredomains.rocks',
   headers: {
     'Content-type': 'application/json',
     // 'authorization': "fde5bb74-e309-4d0b-b20e-21b47420feea"

@@ -50,8 +50,8 @@ function Register(props) {
         <span className="auth__line"></span>
         <label className="auth__input-text-label">
           <span className="auth__input-text-placeholder">Пароль</span>
-          <input className="auth__input-text auth__input-text_type_error" type="password" name="input-password" value={password} onChange={changePassword} required />
-          <span className="auth__input-text-error">Что-то пошло не так...</span>
+          <input className="auth__input-text" type="password" name="input-password" value={password} onChange={changePassword} required />
+          {/* <span className="auth__input-text-error">Что-то пошло не так...</span> */}
         </label>
         <button className="auth__btn-reg" type="submit">Зарегистрироваться</button>
       </form>
