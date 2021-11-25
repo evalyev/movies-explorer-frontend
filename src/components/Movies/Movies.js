@@ -1,22 +1,55 @@
 import './Movies.css';
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import More from '../More/More';
 import { useState } from 'react';
 import moviesApi from '../../utils/MoviesApi';
+import SavedMovies from '../SavedMovies/SavedMovies';
 
 function Movies(props) {
   const [movies, setMovies] = useState([]);
+  const [myMovies, setMyMovies] = useState([]);
   const [maxMovies, setMaxMovies] = useState(0);
   const [moreCount, setMoreCount] = useState(0);
+  const location = useLocation();
 
   function handleMoreMovies() {
     setMaxMovies(maxMovies + moreCount);
   }
 
+  function handleSaveMovie(movie) {
+    props.onSaveMovie(movie)
+      .then(res => {
+        if (res) {
+          props.onGetMyMovies()
+            .then(res => setMyMovies(res.data))
+        }
+        return res;
+      })
+  }
+
+  function handleRemoveMovie(movieId) {
+    props.onRemoveMovie(movieId)
+      .then(res => {
+        if (res) {
+          props.onGetMyMovies()
+            .then(res => setMyMovies(res.data))
+        }
+        return res;
+      })
+  }
+
   useEffect(() => {
     moviesApi.getMovies()
+      .then(res => {
+        return res;
+      })
       .then(res => setMovies(res))
+      .catch(err => console.log(err));
+
+    props.onGetMyMovies()
+      .then(res => setMyMovies(res.data))
       .catch(err => console.log(err));
 
     if (document.documentElement.clientWidth > 768) {
@@ -37,11 +70,26 @@ function Movies(props) {
     <>
       <section className="cards">
 
-        {movies.map((movie, index) => {
-          if (index < maxMovies) {
-            return <MoviesCard key={movie.id} movie={movie} />
-          }
-        })
+        {location.pathname === '/movies' ?
+          movies.map((movie, index) => {
+            if (index < maxMovies) {
+              let saved = false;
+              const copyMyMovie = myMovies.find(item => {
+                if (item.movieId === movie.id) return true;
+                else return false;
+              })
+              if (copyMyMovie) {
+                saved = true;
+              }
+
+              return <MoviesCard key={movie.id} movie={movie} onSaveMovie={handleSaveMovie} onRemoveMovie={handleRemoveMovie} isSaved={saved} />
+            }
+          }) :
+          (location.pathname === '/saved-movies' &&
+            <SavedMovies onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} setMyMovies={setMyMovies} myMovies={myMovies} />
+          )
+
+
 
         }
 

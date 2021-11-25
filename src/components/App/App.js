@@ -30,7 +30,7 @@ function App() {
   function handleLogin(email, password) {
     return mainApi.login(email, password)
       .then(res => {
-        if (res) {
+        if (res.ok) {
           setLoggedIn(true);
         }
         return res;
@@ -47,18 +47,33 @@ function App() {
         }
         return res;
       })
-    .catch(err => console.log(err))
+      .catch(err => console.log(err))
   }
 
   function handleEditProfile(name, email) {
     return mainApi.setUserInfo(name, email)
       .then(res => {
         if (res) {
-          setCurrentUser({...currentUser, data: {...currentUser.data, name: name, email: email}});
+          setCurrentUser({ ...currentUser, data: { ...currentUser.data, name: name, email: email } });
         }
         return res;
       }
       )
+      .catch(err => console.log(err))
+  }
+
+  function handleSaveMovie(movie) {
+    return mainApi.saveMovie(movie)
+      .catch(err => console.log(err))
+  }
+
+  function handleGetMyMovies() {
+    return mainApi.getMyMovies()
+      .catch(err => console.log(err))
+  }
+
+  function handleRemoveMyMovie(movieId) {
+    return mainApi.removeMovie(movieId)
       .catch(err => console.log(err))
   }
 
@@ -81,7 +96,8 @@ function App() {
           <Header />
         }
 
-        <Main onRegister={handleRegister} onLogin={handleLogin} onEditProfile={handleEditProfile} onLogout={handlgeLogout} changeCurrentUser={setCurrentUser} />
+        <Main onRegister={handleRegister} onLogin={handleLogin} onEditProfile={handleEditProfile} onLogout={handlgeLogout}
+          changeCurrentUser={setCurrentUser} onSaveMovie={handleSaveMovie} onGetMyMovies={handleGetMyMovies} onRemoveMovie={handleRemoveMyMovie} />
 
         {["/", "/movies", "/saved-movies"].includes(location.pathname) &&
           <Footer />

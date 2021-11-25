@@ -1,4 +1,4 @@
-import {mainOptions} from "./constants.js";
+import { mainOptions } from "./constants.js";
 
 class MainApi {
   constructor(config) {
@@ -7,7 +7,7 @@ class MainApi {
   }
 
   _checkResponse(res) {
-    if(res.ok) {
+    if (res.ok) {
       return res.json();
     }
     return Promise.reject(`Ошибка: ${res.status}`);
@@ -31,7 +31,7 @@ class MainApi {
         email: dataUserEmail
       })
     })
-    .then(this._checkResponse)
+      .then(this._checkResponse)
   }
 
   getMyMovies() {
@@ -42,13 +42,23 @@ class MainApi {
   }
 
   saveMovie(data) {
-    return fetch(this._url + '/movies', {
+    return fetch(this._url + '/movies/', {
       method: 'POST',
       headers: this._headers,
       credentials: 'include',
-      body: JSON.stringify(
-        data
-      )
+      body: JSON.stringify({
+        country: data.country,
+        director: data.director,
+        duration: data.duration,
+        year: data.year,
+        description: data.description,
+        image: data.image.url,
+        trailer: data.trailerLink,
+        nameRU: data.nameRU,
+        nameEN: data.nameEN,
+        thumbnail: data.image.formats.thumbnail.url,
+        movieId: data.id,
+      })
     })
       .then(this._checkResponse)
 
@@ -56,7 +66,7 @@ class MainApi {
 
   removeMovie(movieId) {
 
-    return fetch(this._url + '/cards/' + movieId, {
+    return fetch(this._url + '/movies/' + movieId, {
       method: 'DELETE',
       headers: this._headers,
       credentials: 'include',
@@ -86,7 +96,7 @@ class MainApi {
         email: email,
         password: password
       })
-    }) 
+    })
   }
 
   logout() {

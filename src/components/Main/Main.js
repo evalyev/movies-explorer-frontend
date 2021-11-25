@@ -28,7 +28,7 @@ function Main(props) {
         } />
 
         <Route path={["/movies", "/saved-movies"].includes(location.pathname) ? location.pathname : "/movies"} element={
-          <Movies />
+          <Movies onSaveMovie={props.onSaveMovie} onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} />
         } />
 
         <Route path="/profile" element={
