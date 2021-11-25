@@ -10,6 +10,7 @@ import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Error from '../Error/Error';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 function Main(props) {
   const location = useLocation();
@@ -28,11 +29,19 @@ function Main(props) {
         } />
 
         <Route path={["/movies", "/saved-movies"].includes(location.pathname) ? location.pathname : "/movies"} element={
-          <Movies onSaveMovie={props.onSaveMovie} onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} />
+          <ProtectedRoute
+            onSaveMovie={props.onSaveMovie} onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie}
+            component={Movies}
+          />
+          // <Movies onSaveMovie={props.onSaveMovie} onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} />
         } />
 
         <Route path="/profile" element={
-          <Profile onLogout={props.onLogout} onEditProfile={props.onEditProfile} changeCurrentUser={props.changeCurrentUser} />
+          <ProtectedRoute
+            onLogout={props.onLogout} onEditProfile={props.onEditProfile} changeCurrentUser={props.changeCurrentUser}
+            component={Profile}
+          />
+          // <Profile onLogout={props.onLogout} onEditProfile={props.onEditProfile} changeCurrentUser={props.changeCurrentUser} />
         } />
 
         <Route path="/signup" element={

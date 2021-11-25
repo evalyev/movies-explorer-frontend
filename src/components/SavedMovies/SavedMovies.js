@@ -11,9 +11,9 @@ function SavedMovies(props) {
   function handleDeleteMovie(movieId) {
     props.onRemoveMovie(movieId)
       .then(res => {
-        if(res) {
+        if (res) {
           props.onGetMyMovies()
-          .then(movies => props.setMyMovies(movies.data))
+            .then(movies => props.setMyMovies(movies.data))
         }
         return res;
       })
@@ -38,10 +38,8 @@ function SavedMovies(props) {
   return (
     <>
       {
-        props.myMovies.map((movie, index) => {
-          if (index < maxMovies) {
-            return <SavedMoviesCard key={movie.movieId} movie={movie} onRemoveMovie={handleDeleteMovie} />
-          }
+        props.myMovies.map((movie) => {
+          return <SavedMoviesCard key={movie.movieId} movie={movie} onRemoveMovie={handleDeleteMovie} />
         })
       }
 

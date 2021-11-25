@@ -1,11 +1,13 @@
 import './Register.css';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import React, { useState } from 'react';
+import { LoggedInContext } from '../../contexts/LoggedInContext';
 
 function Register(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const loggedIn = React.useContext(LoggedInContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -33,7 +35,9 @@ function Register(props) {
   }
 
   return (
-    <section className="auth">
+    <>
+    {!loggedIn ? (
+      <section className="auth">
       <form className="auth__form" name="auth" onSubmit={handleSubmit}>
         <label className="auth__input-text-label">
           <span className="auth__input-text-placeholder">Имя</span>
@@ -57,6 +61,11 @@ function Register(props) {
         <Link className="auth__link" to="/signin">Войти</Link>
       </div>
     </section>
+    ) : 
+    <Navigate to="/" />
+    }
+    </>
+    
   );
 }
 

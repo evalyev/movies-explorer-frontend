@@ -1,11 +1,13 @@
 import './Login.css';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
+import { LoggedInContext } from '../../contexts/LoggedInContext';
 
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const loggedIn = React.useContext(LoggedInContext);
 
   function changeEmail(e) {
     setEmail(e.target.value);
@@ -26,7 +28,8 @@ function Login(props) {
       })
   }
 
-  return (
+  return (<>
+  {!loggedIn ? (
     <section className="auth">
       <form className="auth__form" name="auth" onSubmit={handleSubmit}>
         <label className="auth__input-text-label">
@@ -47,6 +50,10 @@ function Login(props) {
         <Link className="auth__link" to="/signup">Регистрация</Link>
       </div>
     </section>
+  ) : 
+  <Navigate to="/" />
+  }
+  </>
   );
 }
 

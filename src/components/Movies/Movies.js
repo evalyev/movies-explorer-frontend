@@ -95,7 +95,11 @@ function Movies(props) {
 
       </section>
 
-      {movies.length > maxMovies &&
+      {location.pathname === '/movies' && movies.length > maxMovies &&
+        <More handleClick={handleMoreMovies} />
+      }
+
+      {location.pathname === '/saved-movies' && myMovies.length > maxMovies &&
         <More handleClick={handleMoreMovies} />
       }
 
