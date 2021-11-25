@@ -1,0 +1,9 @@
+.header__hidden-list {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header__hidden-list {
+    display: block;
+  }
+}

@@ -1,0 +1,22 @@
+.header__link_active {
+  font-weight: 500;
+}
+
+.header__link_active:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .header__link_active {
+    padding-bottom: 4px;
+    border-bottom: solid 2px #000;
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__link_active {
+    padding-bottom: 7px;
+    margin-bottom: 15px;
+  }
+}

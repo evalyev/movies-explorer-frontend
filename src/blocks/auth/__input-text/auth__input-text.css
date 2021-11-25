@@ -1,0 +1,14 @@
+.auth__input-text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0 0 10px;
+  border: none;
+  outline: none;
+  border-bottom: solid 1px #E8E8E8;
+  margin: 5px 0 0;
+}
+
+.auth__input-text:focus {
+  border-bottom: solid 1px #FF6838;
+}

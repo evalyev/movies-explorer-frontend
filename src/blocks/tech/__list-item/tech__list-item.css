@@ -1,0 +1,89 @@
+.tech__list-item {
+  width: 90px;
+  padding: 21px 0 22px;
+  background-color: #E8E8E8;
+  border-radius: 10px;
+  margin-right: 10px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.04em;
+}
+
+.tech__list-item:last-of-type {
+  margin-right: 0;
+}
+
+@media (max-width: 850px) {
+  .tech__list-item {
+    width: 76px;
+    padding: 21px 0 21px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech__list-item {
+    font-size: 14px;
+    width: 84px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tech__list-item {
+    margin-top: 10px;
+  }
+
+  .tech__list-item:nth-child(6n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 670px) {
+  .tech__list-item:nth-child(6n) {
+    margin-right: 10px;
+  }
+
+  .tech__list-item:nth-child(5n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .tech__list-item {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 513px) {
+  .tech__list-item:nth-child(5n) {
+    margin-right: 10px;
+  }
+
+  .tech__list-item:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 418px) {
+  .tech__list-item:nth-child(4n) {
+    margin-right: 10px;
+  }
+
+  .tech__list-item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 324px) {
+  .tech__list-item:nth-child(3n) {
+    margin-right: 10px;
+  }
+
+  .tech__list-item:nth-child(2n) {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,20 @@
+.card__btn-trash {
+  width: 8px;
+  height: 8px;
+  background: none;
+  background-image: url(../../../images/card__trash.svg);
+  background-repeat: no-repeat;
+  background-size: 8px;
+  border: none;
+  outline: none;
+  display: none;
+}
+
+.card__btn-trash:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.card:hover .card__btn-trash {
+  display: block;
+}

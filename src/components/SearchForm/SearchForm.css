@@ -1,0 +1,9 @@
+@import url(../../blocks/search/search.css);
+@import url(../../blocks/search/__input-text/search__input-text.css);
+@import url(../../blocks/search/__input-container/search__input-container.css);
+@import url(../../blocks/search/__btn-submit/search__btn-submit.css);
+@import url(../../blocks/search/__shortfilm-label/search__shortfilm-label.css);
+@import url(../../blocks/search/__checkbox/search__checkbox.css);
+@import url(../../blocks/search/__shortfilm/search__shortfilm.css);
+@import url(../../blocks/search/__line/search__line.css);
+@import url(../../blocks/search/__shortfilm-text/search__shortfilm-text.css);

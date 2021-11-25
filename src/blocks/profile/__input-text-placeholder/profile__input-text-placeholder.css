@@ -1,0 +1,8 @@
+.profile__input-text-placeholder {
+  position: absolute;
+  cursor: text;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  top: 0.5px;
+}

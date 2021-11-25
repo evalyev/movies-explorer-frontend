@@ -1,0 +1,24 @@
+.student__name {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 768px) {
+  .student__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .student__name {
+    font-size: 30px;
+    line-height: 36px;
+    text-align: left;
+    margin-top: 40px;
+  }
+}

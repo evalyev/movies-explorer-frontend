@@ -1,0 +1,17 @@
+.error__info {
+  margin: auto auto;
+}
+
+@media (max-width: 768px) {
+  .error__info {
+    margin: 0;
+    position: relative;
+  }
+}
+
+@media (max-width: 600px) {
+  .error__info {
+    margin: auto auto;
+    position: static;
+  }
+}

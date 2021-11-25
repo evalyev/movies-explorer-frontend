@@ -1,0 +1,17 @@
+.header_type_blue {
+  background-color: #465DFF;
+  height: 100vh;
+  padding-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .header_type_blue {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header_type_blue {
+    padding-bottom: 40px;
+  }
+}

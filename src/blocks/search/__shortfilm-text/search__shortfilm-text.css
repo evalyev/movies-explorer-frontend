@@ -1,0 +1,10 @@
+.search__shortfilm-text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 12px;
+}
+
+.search__shortfilm-text:hover {
+  cursor: pointer;
+}

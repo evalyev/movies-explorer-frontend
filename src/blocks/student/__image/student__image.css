@@ -1,0 +1,21 @@
+.student__image {
+  width: 270px;
+  height: 327px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .student__image {
+    width: 255px;
+    height: 307px;
+  }
+}
+
+@media (max-width: 768px) {
+  .student__image {
+    width: 292px;
+    height: 352px;
+  }
+}

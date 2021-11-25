@@ -1,0 +1,23 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 217px);
+  width: 396px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .auth {
+    height: auto;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth {
+    width: 260px;
+    height: calc(100vh - 253px);
+  }
+}

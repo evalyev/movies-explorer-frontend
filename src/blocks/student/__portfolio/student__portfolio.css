@@ -1,0 +1,15 @@
+.student__portfolio {
+  margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .student__portfolio {
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .student__portfolio {
+    margin-top: 69px;
+  }
+}

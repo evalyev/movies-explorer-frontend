@@ -1,0 +1,57 @@
+@import url(../vendor/fonts/fonts.css);
+
+@import url(../blocks/page/page.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/_type/header_type_blue.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__nav/header__nav.css);
+@import url(../blocks/header/__auth/header__auth.css);
+@import url(../blocks/header/__reg/header__reg.css);
+@import url(../blocks/header/__login/header__login.css);
+@import url(../blocks/header/__title/header__title.css);
+@import url(../blocks/header/__land-logo/header__land-logo.css);
+
+@import url(../blocks/content/content.css);
+@import url(../blocks/content/__title/content__title.css);
+
+@import url(../blocks/about/about.css);
+@import url(../blocks/about/__two-columns/about__two-columns.css);
+@import url(../blocks/about/__column/about__column.css);
+@import url(../blocks/about/__subtitle/about__subtitle.css);
+@import url(../blocks/about/__paragraph/about__paragraph.css);
+@import url(../blocks/about/__timeline/about__timeline.css);
+@import url(../blocks/about/__first-period/about__first-period.css);
+@import url(../blocks/about/__second-period/about__second-period.css);
+@import url(../blocks/about/__period/about__period.css);
+@import url(../blocks/about/__period/_type/about__period_type_first.css);
+@import url(../blocks/about/__period/_type/about__period_type_second.css);
+@import url(../blocks/about/__period-name/about__period-name.css);
+
+@import url(../blocks/tech/tech.css);
+@import url(../blocks/tech/__title/tech__title.css);
+@import url(../blocks/tech/__paragraph/tech__paragraph.css);
+@import url(../blocks/tech/__list/tech__list.css);
+@import url(../blocks/tech/__list-item/tech__list-item.css);
+
+@import url(../blocks/student/student.css);
+@import url(../blocks/student/__two-columns/student__two-columns.css);
+@import url(../blocks/student/__column/student__column.css);
+@import url(../blocks/student/__name/student__name.css);
+@import url(../blocks/student/__subtitle/student__subtitle.css);
+@import url(../blocks/student/__paragraph/student__paragraph.css);
+@import url(../blocks/student/__soc-nets/student__soc-nets.css);
+@import url(../blocks/student/__soc-net-link/student__soc-net-link.css);
+@import url(../blocks/student/__image/student__image.css);
+@import url(../blocks/student/__portfolio/student__portfolio.css);
+@import url(../blocks/student/__portfolio-title/student__portfolio-title.css);
+@import url(../blocks/student/__links/student__links.css);
+@import url(../blocks/student/__link/student__link.css);
+@import url(../blocks/student/__link-container/student__link-container.css);
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__title/footer__title.css);
+@import url(../blocks/footer/__info/footer__info.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/footer/__links/footer__links.css);
+@import url(../blocks/footer/__link/footer__link.css);

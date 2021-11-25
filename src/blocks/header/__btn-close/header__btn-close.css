@@ -1,0 +1,30 @@
+.header__btn-close {
+  display: none;
+  position: absolute;
+  background: none;
+  border: none;
+  outline: none;
+  background-image: url(../../../images/menu__close.svg);
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  top: 22.44px;
+  right: 22.44px;
+}
+
+.header__btn-close:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header__btn-close {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__btn-close {
+    top: 13.44px;
+    right: 13.44px;
+  }
+}

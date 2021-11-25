@@ -1,0 +1,17 @@
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .auth__form {
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth__form {
+    height: 100vh;
+  }
+}

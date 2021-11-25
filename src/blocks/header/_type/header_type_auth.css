@@ -1,0 +1,19 @@
+.header_type_auth {
+  width: 396px;
+  margin: 0 auto;
+  padding: 70px 0 40px;
+}
+
+@media (max-width: 768px) {
+  .header_type_auth {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header_type_auth {
+    padding: 56px 0 80px;
+    width: 260px;
+    align-items: center;
+  }
+}
