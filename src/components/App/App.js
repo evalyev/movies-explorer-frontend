@@ -18,6 +18,7 @@ function App() {
   const [myMovies, setMyMovies] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [allMovies, setAllMovies] = useState([]);
+  const [isSearched, setIsSearched] = useState(false);
 
   function isErrorPath() {
     if (routes.includes(location.pathname)) {
@@ -122,12 +123,13 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <LoggedInContext.Provider value={loggedIn}>
         {!isErrorPath() &&
-          <Header movies={movies} myMovies={myMovies} onSearch={handleSearch} onMySearch={handleMySearch} />
+          <Header movies={movies} myMovies={myMovies} onSearch={handleSearch} onMySearch={handleMySearch} isSearched={isSearched} setIsSearched={setIsSearched} />
         }
 
         <Main onRegister={handleRegister} onLogin={handleLogin} onEditProfile={handleEditProfile} onLogout={handlgeLogout}
           changeCurrentUser={setCurrentUser} onSaveMovie={handleSaveMovie} onGetMyMovies={handleGetMyMovies} onRemoveMovie={handleRemoveMyMovie}
-          movies={movies} myMovies={myMovies} setMovies={setMovies} setMyMovies={setMyMovies} getAllMovies={handleGetAllMovies} />
+          movies={movies} myMovies={myMovies} setMovies={setMovies} setMyMovies={setMyMovies} getAllMovies={handleGetAllMovies} 
+          isSearched={isSearched} setIsSearched={setIsSearched} />
 
         {["/", "/movies", "/saved-movies"].includes(location.pathname) &&
           <Footer />

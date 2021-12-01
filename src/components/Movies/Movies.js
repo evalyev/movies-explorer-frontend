@@ -71,7 +71,7 @@ function Movies(props) {
       <section className="cards">
 
         {location.pathname === '/movies' ?
-          props.movies.map((movie, index) => {
+          (props.movies.length > 0 ? props.movies.map((movie, index) => {
             if (index < maxMovies) {
               let saved = false;
               const copyMyMovie = props.myMovies.find(item => {
@@ -84,9 +84,14 @@ function Movies(props) {
 
               return <MoviesCard key={movie.id} movie={movie} onSaveMovie={handleSaveMovie} onRemoveMovie={handleRemoveMovie} isSaved={saved} />
             }
-          }) :
+          }) 
+            :
+            (props.isSearched && <h2 className="cards__not-found">Ничего не найдено</h2>)
+          )
+           :
           (location.pathname === '/saved-movies' &&
-            <SavedMovies onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} setMyMovies={props.setMyMovies} myMovies={props.myMovies} />
+            <SavedMovies onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} setMyMovies={props.setMyMovies} 
+            myMovies={props.myMovies} isSearched={props.isSearched} setIsSearched={props.setIsSearched} />
           )
 
 

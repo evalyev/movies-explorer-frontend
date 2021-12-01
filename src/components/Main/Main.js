@@ -32,7 +32,7 @@ function Main(props) {
           <ProtectedRoute
             onSaveMovie={props.onSaveMovie} onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie}
             movies={props.movies} myMovies={props.myMovies} setMovies={props.setMovies} setMyMovies={props.setMyMovies}
-            getAllMovies={props.getAllMovies} component={Movies}
+            getAllMovies={props.getAllMovies} isSearched={props.isSearched} setIsSearched={props.setIsSearched} component={Movies}
           />
           // <Movies onSaveMovie={props.onSaveMovie} onGetMyMovies={props.onGetMyMovies} onRemoveMovie={props.onRemoveMovie} />
         } />

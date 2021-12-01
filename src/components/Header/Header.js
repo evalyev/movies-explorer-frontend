@@ -23,11 +23,11 @@ function Header(props) {
           } />
 
           <Route path="/movies" element={
-            <SearchForm onSearch={props.onSearch} />
+            <SearchForm onSearch={props.onSearch} isSearched={props.isSearched} setIsSearched={props.setIsSearched} />
           } />
 
           <Route path="/saved-movies" element={
-            <SearchForm onSearch={props.onMySearch} />
+            <SearchForm onSearch={props.onMySearch} isSearched={props.isSearched} setIsSearched={props.setIsSearched} />
           } />
 
           <Route path={["/signin", "/signup"].includes(location.pathname) ? location.pathname : "/signin"} element={

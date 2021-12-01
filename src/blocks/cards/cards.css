@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, calc((100% - 48px) / 3));
   gap: 37px 24px;
+  position: relative;
 }
 
 @media (max-width: 768px) {

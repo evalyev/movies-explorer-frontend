@@ -1,12 +1,13 @@
 import './SearchForm.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
+import { useLocation } from 'react-router';
 
 function SearchForm(props) {
   const [searchText, setSearchText] = useState("");
   const [isShort, setIsShort] = useState(false);
-  const [isSearched, setIsSearched] = useState(false);
+  const location = useLocation();
   
   function changeSearchText(e) {
     setSearchText(e.target.value);
@@ -19,12 +20,20 @@ function SearchForm(props) {
   function handleSubmit(e) {
     e.preventDefault();
     props.onSearch(searchText, isShort);
-    setIsSearched(true);
+    props.setIsSearched(true);
   }
 
   function handleFilter(isShort) {
     props.onSearch(searchText, isShort);
   }
+
+  useEffect(() => {
+    props.setIsSearched(false);
+    if (location.pathname === '/saved-movies')
+    {
+      props.setIsSearched(true);
+    }
+  }, [])
 
   return (
     <form className="search" name="search-form" onSubmit={handleSubmit}>
@@ -32,7 +41,7 @@ function SearchForm(props) {
         <input className="search__input-text" name="search-input" value={searchText} onChange={changeSearchText} type="text" placeholder="Фильм" />
         <button className="search__btn-submit" type="submit"></button>
       </div>
-      <FilterCheckbox isShort={isShort} toggleIsShort={toggleIsShort} onSubmit={handleFilter} isSearched={isSearched} />
+      <FilterCheckbox isShort={isShort} toggleIsShort={toggleIsShort} onSubmit={handleFilter} isSearched={props.isSearched} />
       <span className="search__line"></span>
     </form>
   );

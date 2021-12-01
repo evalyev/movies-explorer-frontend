@@ -37,10 +37,11 @@ function SavedMovies(props) {
 
   return (
     <>
-      {
+      {props.myMovies.length > 0 ?
         props.myMovies.map((movie) => {
           return <SavedMoviesCard key={movie.movieId} movie={movie} onRemoveMovie={handleDeleteMovie} />
-        })
+        }) :
+        <h2 className="cards__not-found">Ничего не найдено</h2>
       }
 
     </>
