@@ -33,6 +33,10 @@ function Profile(props) {
     
   }
 
+  function isEqualData() {
+    return name === currentUser?.data.name && email === currentUser?.data.email;
+  }
+
   function handleLogout() {
     props.onLogout()
       .then(res => {
@@ -65,7 +69,7 @@ function Profile(props) {
           <span className={`profile__notice ${!isSuccess ? "profile__notice_type_error" : ""}`}>{isSuccess ? "Данные успешно сохранены" : "При обновлении профиля произошла ошибка"}</span>
         }
         
-        <button className="profile__btn-edit">Редактировать</button>
+        <button className={`profile__btn-edit ${isEqualData() ? "profile__btn-edit_type_disabled" : ""}`} disabled={isEqualData() ? true : false}>Редактировать</button>
       </form>
       <button className="profile__btn-exit" onClick={handleLogout}>Выйти из аккаунта</button>
     </section>

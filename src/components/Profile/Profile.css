@@ -9,3 +9,4 @@
 @import url(../../blocks/profile/__titile/profile__titile.css);
 @import url(../../blocks/profile/__notice/profile__notice.css);
 @import url(../../blocks/profile/__notice/_type/profile__notice_type_error.css);
+@import url(../../blocks/profile/__btn-edit/_type/profile__btn-edit_type_disabled.css);
