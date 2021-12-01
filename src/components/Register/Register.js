@@ -62,7 +62,7 @@ function Register(props) {
       </div>
     </section>
     ) : 
-    <Navigate to="/" />
+    <Navigate to="/movies" />
     }
     </>
     

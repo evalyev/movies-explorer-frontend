@@ -51,7 +51,7 @@ function Login(props) {
       </div>
     </section>
   ) : 
-  <Navigate to="/" />
+  <Navigate to="/movies" />
   }
   </>
   );
