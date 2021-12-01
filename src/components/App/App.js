@@ -17,6 +17,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [myMovies, setMyMovies] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [allMovies, setAllMovies] = useState([]);
 
   function isErrorPath() {
     if (routes.includes(location.pathname)) {
@@ -27,11 +28,11 @@ function App() {
 
   function handleRegister(name, email, password) {
     return mainApi.register(name, email, password)
-    .then(res => {
-      if(res.ok) {
-        handleLogin(email, password)
-      }
-    })
+      .then(res => {
+        if (res.ok) {
+          handleLogin(email, password)
+        }
+      })
       .catch(err => console.log(err))
   }
 
@@ -86,9 +87,13 @@ function App() {
   }
 
   function handleSearch(searchText, isShort) {
+    setMovies(searchMovies(allMovies, searchText, isShort));
+  }
+
+  function handleGetAllMovies() {
     moviesApi.getMovies()
       .then(res => {
-        setMovies(searchMovies(res, searchText, isShort));
+        setAllMovies(res);
       })
       .catch(err => console.log(err));
   }
@@ -122,7 +127,7 @@ function App() {
 
         <Main onRegister={handleRegister} onLogin={handleLogin} onEditProfile={handleEditProfile} onLogout={handlgeLogout}
           changeCurrentUser={setCurrentUser} onSaveMovie={handleSaveMovie} onGetMyMovies={handleGetMyMovies} onRemoveMovie={handleRemoveMyMovie}
-          movies={movies} myMovies={myMovies} setMovies={setMovies} setMyMovies={setMyMovies} />
+          movies={movies} myMovies={myMovies} setMovies={setMovies} setMyMovies={setMyMovies} getAllMovies={handleGetAllMovies} />
 
         {["/", "/movies", "/saved-movies"].includes(location.pathname) &&
           <Footer />
