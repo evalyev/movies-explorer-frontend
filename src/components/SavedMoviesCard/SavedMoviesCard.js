@@ -8,7 +8,7 @@ function SavedMoviesCard(props) {
 
   return (
     <article className="card">
-      <a className="card__image-container" href={props.movie.trailer}>
+      <a className="card__image-container" href={props.movie.trailer} target="_blank" rel="noreferrer">
         <img className="card__image" src={props.movie.image} alt={props.movie.nameRU} />
       </a>
       <div className="card__info">

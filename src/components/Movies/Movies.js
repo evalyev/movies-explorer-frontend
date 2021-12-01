@@ -32,7 +32,12 @@ function Movies(props) {
       .then(res => {
         if (res) {
           props.onGetMyMovies()
-            .then(res => props.setMyMovies(res.data))
+            .then(movies => {
+              if (movies?.data)
+                props.setMyMovies(movies.data);
+              else
+                props.setMyMovies([]);
+            })
         }
         return res;
       })

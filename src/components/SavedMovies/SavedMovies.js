@@ -13,7 +13,12 @@ function SavedMovies(props) {
       .then(res => {
         if (res) {
           props.onGetMyMovies()
-            .then(movies => props.setMyMovies(movies.data))
+            .then(movies => {
+              if (movies?.data)
+                props.setMyMovies(movies.data);
+              else
+                props.setMyMovies([]);
+            })
         }
         return res;
       })

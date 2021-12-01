@@ -22,7 +22,7 @@ function MoviesCard(props) {
 
   return (
     <article className="card">
-      <a className="card__image-container" href={props.movie.trailerLink}>
+      <a className="card__image-container" href={props.movie.trailerLink} target="_blank" rel="noreferrer">
         <img className="card__image" src={props.movie.image.url} alt={props.movie.nameRU} />
       </a>
       <div className="card__info">
