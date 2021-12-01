@@ -45,6 +45,7 @@ function Movies(props) {
     //   })
     //   .then(res => props.setMovies(res))
     //   .catch(err => console.log(err));
+    props.setMovies([]);
     props.getAllMovies();
 
     props.onGetMyMovies()

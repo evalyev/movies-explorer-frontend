@@ -1,6 +1,8 @@
 export function searchMovies(movies, searchText, isShort) {
   let indexies = [];
 
+  const newMovies = movies.slice(0);
+
   let searchTextList = null;
   if (searchText.length > 0 && searchText.includes(' ')) {
     searchTextList = searchText.split(' ');
@@ -10,12 +12,12 @@ export function searchMovies(movies, searchText, isShort) {
       searchTextList.forEach(search => {
         let delItems = 0;
         indexies.forEach(index => {
-          movies.splice(index-delItems, 1);
+          newMovies.splice(index-delItems, 1);
           delItems++;
         })
         indexies = [];
 
-        movies.forEach((movie, index) => {
+        newMovies.forEach((movie, index) => {
           const nameList = movie.nameRU.split(' ');
           let isTruth = false;
 
@@ -41,7 +43,7 @@ export function searchMovies(movies, searchText, isShort) {
   }
   else {
     if (searchText.length === 0) {
-      movies.forEach((movie, index) => {
+      newMovies.forEach((movie, index) => {
         if (isShort && movie.duration >= 40) {
           indexies.push(index);
         }
@@ -49,12 +51,12 @@ export function searchMovies(movies, searchText, isShort) {
 
       let delItems = 0;
       indexies.forEach(index => {
-        movies.splice(index - delItems, 1);
+        newMovies.splice(index - delItems, 1);
         delItems++;
       })
     }
     else {
-      movies.forEach((movie, index) => {
+      newMovies.forEach((movie, index) => {
         const nameList = movie.nameRU.split(' ');
         let isTruth = false;
 
@@ -74,13 +76,13 @@ export function searchMovies(movies, searchText, isShort) {
 
       let delItems = 0;
       indexies.forEach(index => {
-        movies.splice(index - delItems, 1);
+        newMovies.splice(index - delItems, 1);
         delItems++;
       })
     }
 
   }
 
-  return movies;
+  return newMovies;
 
 }
