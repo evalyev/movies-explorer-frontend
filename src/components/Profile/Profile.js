@@ -7,6 +7,8 @@ function Profile(props) {
   const currentUser = React.useContext(CurrentUserContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [isVisibleNotice, setIsVisibleNotice] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   function changeName(e) {
     setName(e.target.value);
@@ -19,6 +21,15 @@ function Profile(props) {
   function handleSubmit(e) {
     e.preventDefault();
     props.onEditProfile(name, email)
+      .then(res => {
+        setIsVisibleNotice(true);
+        if(res) {
+          setIsSuccess(true);
+        }
+        else {
+          setIsSuccess(false);
+        }
+      })
     
   }
 
@@ -50,6 +61,10 @@ function Profile(props) {
           <span className="profile__input-text-placeholder">E-mail</span>
           <input className="profile__input-text" type="email" name="input-email" value={email} onChange={changeEmail} required />
         </label>
+        {isVisibleNotice &&
+          <span className={`profile__notice ${!isSuccess ? "profile__notice_type_error" : ""}`}>{isSuccess ? "Данные успешно сохранены" : "При обновлении профиля произошла ошибка"}</span>
+        }
+        
         <button className="profile__btn-edit">Редактировать</button>
       </form>
       <button className="profile__btn-exit" onClick={handleLogout}>Выйти из аккаунта</button>
