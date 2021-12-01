@@ -47,6 +47,10 @@ function Movies(props) {
     //   .catch(err => console.log(err));
     props.getAllMovies();
 
+    props.onGetMyMovies()
+      .then(res => props.setMyMovies(res.data))
+      .catch(err => console.log(err));
+
     if (document.documentElement.clientWidth > 768) {
       setMaxMovies(12);
       setMoreCount(3);
