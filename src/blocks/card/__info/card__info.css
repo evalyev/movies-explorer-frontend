@@ -1,0 +1,18 @@
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 16px 17px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .card__info {
+    padding: 14px 14px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card__info {
+    padding-bottom: 14px;
+  }
+}

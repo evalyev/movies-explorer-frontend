@@ -1,0 +1,20 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .error {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .error {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}

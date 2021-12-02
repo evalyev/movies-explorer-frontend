@@ -1,0 +1,21 @@
+.tech__title {
+  margin: 90px auto 0;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 768px) {
+  .tech__title {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tech__title {
+    margin-top: 60px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+}

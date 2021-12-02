@@ -1,0 +1,12 @@
+.profile__notice {
+  width: 100%;
+  position: absolute;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+}

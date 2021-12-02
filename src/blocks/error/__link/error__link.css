@@ -1,0 +1,40 @@
+.error__link {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FF6838;
+  text-decoration: none;
+  transform: translateX(-50%);
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.error__link:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .error__link {
+    bottom: -184px;
+  }
+}
+
+@media (max-height: 600px) {
+  .error__link {
+    bottom: -60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .error__link {
+    bottom: 30px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

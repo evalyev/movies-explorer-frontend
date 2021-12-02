@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  padding: 0 70px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0 14px;
+    overflow: hidden;
+  }
+}

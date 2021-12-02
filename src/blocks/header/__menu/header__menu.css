@@ -1,0 +1,28 @@
+.header__menu {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .header__menu {
+    display: none;
+    position: fixed;
+    width: calc(100vw - 248px);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 1;
+    flex-direction: column;
+    padding-bottom: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__menu {
+    width: 100vw;
+    padding-bottom: 46px;
+  }
+}

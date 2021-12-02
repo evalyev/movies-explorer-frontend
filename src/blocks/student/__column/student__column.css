@@ -1,0 +1,14 @@
+.student__column {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .student__column {
+    width: 292px;
+  }
+
+  .student__column:nth-child(1) {
+    order: 2;
+  }
+}

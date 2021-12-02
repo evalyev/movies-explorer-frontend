@@ -1,0 +1,12 @@
+@import url(../../blocks/about/about.css);
+@import url(../../blocks/about/__two-columns/about__two-columns.css);
+@import url(../../blocks/about/__column/about__column.css);
+@import url(../../blocks/about/__subtitle/about__subtitle.css);
+@import url(../../blocks/about/__paragraph/about__paragraph.css);
+@import url(../../blocks/about/__timeline/about__timeline.css);
+@import url(../../blocks/about/__first-period/about__first-period.css);
+@import url(../../blocks/about/__second-period/about__second-period.css);
+@import url(../../blocks/about/__period/about__period.css);
+@import url(../../blocks/about/__period/_type/about__period_type_first.css);
+@import url(../../blocks/about/__period/_type/about__period_type_second.css);
+@import url(../../blocks/about/__period-name/about__period-name.css);

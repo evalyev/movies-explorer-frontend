@@ -1,0 +1,6 @@
+.search__input-container {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 40px;
+  position: relative;
+}
