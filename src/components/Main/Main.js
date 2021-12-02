@@ -54,7 +54,7 @@ function Main(props) {
         } />
 
         <Route path="/*" element={
-          <Error />
+          <Error navigate={props.navigate} />
         } />
 
       </Routes>

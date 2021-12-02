@@ -2,7 +2,7 @@ import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { routes } from '../../utils/constants';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { LoggedInContext } from '../../contexts/LoggedInContext';
@@ -12,6 +12,7 @@ import moviesApi from '../../utils/MoviesApi';
 import { searchMovies } from '../../utils/filterFunction';
 
 function App() {
+  const navigate = useNavigate();
   const location = useLocation();
   const [currentUser, setCurrentUser] = useState(null);
   const [movies, setMovies] = useState([]);
@@ -92,11 +93,26 @@ function App() {
   }
 
   function handleGetAllMovies() {
-    moviesApi.getMovies()
-      .then(res => {
-        setAllMovies(res);
-      })
-      .catch(err => console.log(err));
+    let allMoviesLocalStorage = localStorage.getItem('movies');
+
+    if (!allMoviesLocalStorage) {
+      moviesApi.getMovies()
+        .then(res => {
+          setAllMovies(res);
+          localStorage.setItem('movies', JSON.stringify(res));
+        })
+        .catch(err => console.log(err));
+    }
+    else {
+      try {
+        allMoviesLocalStorage = JSON.parse(allMoviesLocalStorage);
+        setAllMovies(allMoviesLocalStorage);
+      }
+      catch {
+        localStorage.removeItem('movies');
+      }
+    }
+
   }
 
   function handleMySearch(searchText, isShort) {
@@ -123,13 +139,13 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <LoggedInContext.Provider value={loggedIn}>
         {!isErrorPath() &&
-          <Header movies={movies} myMovies={myMovies} onSearch={handleSearch} onMySearch={handleMySearch} isSearched={isSearched} setIsSearched={setIsSearched} />
+          <Header navigate={navigate} movies={movies} myMovies={myMovies} onSearch={handleSearch} onMySearch={handleMySearch} isSearched={isSearched} setIsSearched={setIsSearched} />
         }
 
         <Main onRegister={handleRegister} onLogin={handleLogin} onEditProfile={handleEditProfile} onLogout={handlgeLogout}
           changeCurrentUser={setCurrentUser} onSaveMovie={handleSaveMovie} onGetMyMovies={handleGetMyMovies} onRemoveMovie={handleRemoveMyMovie}
-          movies={movies} myMovies={myMovies} setMovies={setMovies} setMyMovies={setMyMovies} getAllMovies={handleGetAllMovies} 
-          isSearched={isSearched} setIsSearched={setIsSearched} />
+          movies={movies} myMovies={myMovies} setMovies={setMovies} setMyMovies={setMyMovies} getAllMovies={handleGetAllMovies}
+          isSearched={isSearched} setIsSearched={setIsSearched} navigate={navigate} />
 
         {["/", "/movies", "/saved-movies"].includes(location.pathname) &&
           <Footer />
